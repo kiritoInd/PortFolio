@@ -27,6 +27,7 @@ export default class Renderer2 {
         this.renderer.toneMappingExposure = 1.2;
         this.renderer.shadowMap.enabled = true;
         this.renderer.autoClear = false;
+        this.renderer.autoResize = false;
         this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
         this.renderer.setSize(this.sizes.width, this.sizes.height);
         this.renderer.setPixelRatio(this.sizes.pixelRatio);

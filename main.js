@@ -82,7 +82,7 @@ console.log("done")
    ScrollTrigger.create({
       trigger: ".scrolltrigger-one",
       animation: timelineSkills,
-      start: "bottom bottom", // Trigger animation when the top of the section reaches the center of the viewport
+      start: "center center", // Trigger animation when the top of the section reaches the center of the viewport
    });
 
 
@@ -91,7 +91,7 @@ console.log("done")
     {
       scrollTrigger: {
         trigger: ".scrolltrigger-two",
-        start: "top top",
+        start: "bottom bottom",
       }
     }
    ).from(".title-three", {

@@ -25,8 +25,8 @@ export default class Controls {
     setPath(){
       ScrollTrigger.matchMedia({ 
         "(min-width: 969px)":() =>{
-          this.room.position.set(-3, 1, 0);
-          this.room.scale.set(0.6, 0.6, 0.6);
+          this.room.position.set(-2.3, 1, 0);
+          this.room.scale.set(0.5, 0.5, 0.5);
 
           
       },

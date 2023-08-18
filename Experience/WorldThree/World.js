@@ -1,36 +1,32 @@
 import * as THREE from "three";
 import Experience from "../Experience.js";
-import Room from "./Room.js";
-import Controls from "./Controls.js"
 import Environment from "./Environment.js";
 import { EventEmitter } from "events";
+import Galaxy from "./Galaxy.js";
 
-
-export default class World extends EventEmitter {
+export default class WorldThree extends EventEmitter {
     constructor() {
         super();
         this.experience = new Experience();
         this.sizes = this.experience.sizes;
-        this.scene = this.experience.scene;
-        
-        this.canvas = this.experience.canvas;
+        this.scene = this.experience.scene4;
+        this.canvas = this.experience.canvas2;
         this.camera = this.experience.camera;
         this.resources = this.experience.resources;
 
         
         this.resources.on("ready", () => {
             this.environment = new Environment();
-          
-            this.room = new Room();
-            this.Controls = new Controls();
+            this.galaxy = new Galaxy();
+            
 
         });
     }
     resize() {}
     update() {
-        if(this.room){
-            this.room.update();
-        }
+       if(this.galaxy){
+              this.galaxy.update();
+       }
   
         if(this.controls){
             this.controls.update();

@@ -23,20 +23,27 @@ export default class ControlsTwo {
     
     setPath(){
       ScrollTrigger.matchMedia({ 
-        "(min-width: 969px)":() =>{
-          this.room.position.set(-3, 0, 0);
+        "(min-width: 968px)":() =>{
+          this.room.position.set(-2.5, 0, 0);
           this.room.scale.set(0.6, 0.6, 0.6);
 
           
       },
       "(max-width: 1208px)": () => {
         this.room.scale.set(0.5, 0.5, 0.5);
-        this.room.position.set(-2.5, 0.5, 0);
+        this.room.position.set(-1.2, 0, 0);
 
       } ,
-      "(max-width: 968px)": () => {
-        this.room.scale.set(0.35, 0.35, 0.35);
-        this.room.position.set(-0.1, 1.2, 0);
+        "(max-width: 968px)": () => {
+          this.room.scale.set(0.4, 0.4, 0.4);
+        this.room.position.set(-1.2, 0, 0);
+
+      } 
+      ,
+      "(max-width: 768px)": () => {
+        this.room.scale.set(0.4, 0.4, 0.4);
+
+        this.room.position.set(-0, 1.3, 0);
 
       } 
        })
@@ -44,7 +51,8 @@ export default class ControlsTwo {
         this.timeline = GSAP.timeline({
             scrollTrigger: {
                 trigger: ".second-move",
-                start: "top top",
+                start: "center center",
+                // markers: true,
             }
 
         })
@@ -63,7 +71,7 @@ export default class ControlsTwo {
              // Set the duration to 0.9 seconds for the carpet animation
           },"mailbox")
         .to(this.roomchildren.mailbox.rotation, {
-            y: Math.PI*2.4,
+            y: Math.PI*2.35,
             duration: 0.6,
             ease: "back.out(1)",
 
@@ -146,11 +154,8 @@ export default class ControlsTwo {
             z:0.845605 ,
             duration: 0.3,
             ease: "back.out(1)",
-
              // Set the duration to 0.9 seconds for the carpet animation
           },)
-          
-   
 }
 
     resize() {

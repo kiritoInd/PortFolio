@@ -6,10 +6,11 @@ import assets from "./utils/assets.js"
 import Camera from "./Camera.js"
 import Renderer from "./Renderer.js"
 import World from "./World/World.js"
-import FlowField from "./FlowField/FlowFIeld.js"
 import Theme from "./Theme.js"
 import Renderer2 from "./Renderer2"
 import WorldTwo from "./WorldTwo/WorldTwo"
+import Renderer3 from "./Renderer3"
+import WorldThree from "./WorldThree/World"
 
 
 
@@ -22,20 +23,22 @@ export default class Experience{
        }
        Experience.instance = this
        this.canvas = canvas1;
-       this.canvas2 = canvas2;
+       this.canvas4 = canvas2;
        this.canvas3 = canvas3;
        this.scene = new THREE.Scene();
        this.scene2 = new THREE.Scene();
+       this.scene4 = new THREE.Scene();
        this.time = new Time();
        this.sizes = new Sizes();
        this.camera = new Camera();
-       this.renderer2 = new Renderer2();
        this.renderer = new Renderer();
-       this.flowField = new FlowField();
+       this.renderer2 = new Renderer2();
+       this.renderer3 = new Renderer3();
        this.resources = new Resources(assets);
        this.theme = new Theme();
        this.world = new World();
        this.world2 = new WorldTwo(); 
+       this.world3 = new WorldThree(); 
        
       
 
@@ -52,11 +55,12 @@ export default class Experience{
 
     resize() {
         this.camera.resize();
-        this.flowField.resize();
         this.renderer.resize();
         this.world.resize();
         this.renderer2.resize();
+        this.renderer3.resize();
         this.world2.resize();
+        this.world3.resize();
 
 
 
@@ -64,12 +68,13 @@ export default class Experience{
     }
 
     update(){
-        this.flowField.update();
         this.camera.update();
         this.renderer.update();
         this.world.update();
         this.renderer2.update();
+        this.renderer3.update();
         this.world2.update();
+        this.world3.update();
 
 
     
